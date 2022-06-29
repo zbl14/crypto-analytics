@@ -3,16 +3,38 @@
 <head>
   <title>Crypto-Analytics-Service</title>
 </head>
-<body>
-  <div class="container">
-    <h1>Get Crypto Information</h1>
-    <label for="name"> Enter a Ticker Symbol:</label>
-    <input id="name" type="text">
-    <button class="btn" id="submit">Get Info</button>
-  </div> 
+<body class="container">
+  <div class="box1">
+    <h2>Get Crypto Information</h2>
+    <div>
+      <label for="name"> Enter a Ticker Symbol:</label>
+      <input id="name" type="text">
+    </div>
+    <br>
+    <button class="btn btn-primary" id="submit">Get Info</button>
+  </div>
   <div class="showRank"></div>
   <div class="showPrice"></div>
   <div class="showVolume"></div>
+
+  <div class="box1">
+    <h2>Find Crypto Price</h2>
+    
+      <label for="buy"> Enter a Ticker Symbol:</label>
+      <input id="buy" type="text">
+    
+      <label for="sell"> Enter a Ticker Symbol:</label>
+      <input id="sell" type="text">
+    
+      <label for="quantityBuy"> Enter the Desired Amount:</label>
+      <input id="quantityBuy" type="number">
+    
+      <label for="quantitySell"> Enter the Desired Amount:</label>
+      <input id="quantitySell" type="number">
+    
+    <button class="btn btn-primary" id="quote">Get Price</button>
+    <div class="showCost"></div>
+  </div>
 
   <div>
     <h2>Top 100 Crypto</h2>
@@ -21,14 +43,14 @@
         <th>Rank</th>
         <th>Symbol</th>
         <th>Price</th>
-        <th>Volume</th>
+        <th>Volume (24h)</th>
       </tr>
       <tr id="topCrypto"></tr>
       <tr>
         <th>Rank</th>
         <th>Symbol</th>
         <th>Price</th>
-        <th>Volume</th>
+        <th>Volume (24h)</th>
       </tr> 
     </table>
   </div>
