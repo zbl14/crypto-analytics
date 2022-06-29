@@ -1,9 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Document</title>
+  <title>Crypto-Analytics-Service</title>
 </head>
 <body>
-  
+  <div class="container">
+    <h1>Get Crypto Information</h1>
+    <label for="name"> Enter a Ticker Symbol:</label>
+    <input id="name" type="text">
+    <button class="btn" id="submit">Get Info</button>
+  </div> 
+  <div class="showRank"></div>
+  <div class="showPrice"></div>
+  <div class="showVolume"></div>
+
+  <div>
+    <h2>Top 100 Crypto</h2>
+    <table class="table table-striped">
+      <tr>
+        <th>Rank</th>
+        <th>Symbol</th>
+        <th>Price</th>
+        <th>Volume</th>
+      </tr>
+      <tr id="topCrypto"></tr>
+      <tr>
+        <th>Rank</th>
+        <th>Symbol</th>
+        <th>Price</th>
+        <th>Volume</th>
+      </tr>
+    </table>
+  </div>
 </body>
 </html>
