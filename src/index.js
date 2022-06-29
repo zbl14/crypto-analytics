@@ -23,7 +23,7 @@ function getTopCrypto(response) {
   if (response) {
     let tableOfTopCrypto = "";
     for (let i = 0; i < response.length; i++) {
-      tableOfTopCrypto += `<tr> <td>${response[i].rank}</td> <td>${response[i].symbol}</td> <td>${response[i].name}</td> <td>${new Intl.NumberFormat('en-US').format(response[i].price)}</td> <td>${response[i]["1d"].volume}</td> </tr>`;
+      tableOfTopCrypto += `<tr> <td>${response[i].rank}</td> <td> <img src="${response[i].logo_url}" width="25px"> ${response[i].symbol}</td> <td>${response[i].name}</td> <td> $ ${new Intl.NumberFormat('en-US').format(response[i].price)}</td> <td>${response[i]["1d"].volume}</td> </tr>`;
     }
     $("#topCrypto").before(tableOfTopCrypto);
   } else {
