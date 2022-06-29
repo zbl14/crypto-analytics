@@ -4,3 +4,16 @@
   background-color: var(--bs-light);
   border-radius: .3rem;  
 }
+
+.box1 {
+  background-color: white;
+  border: solid black;
+  border-radius: 2rem;
+  padding: 10px;
+  width: 50%;
+  display: block;
+  text-align: center;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
