@@ -18,23 +18,22 @@ function getTopCrypto(response) {
   if (response) {
     let tableOfTopCrypto = "";
     for (let i = 0; i < response.length; i++) {
-      tableOfTopCrypto += `<tr> <td>${response[i].rank}</td> <td>${response[i].name}</td> <td>${response[i].price}</td> <td>${response[i]["1d"].volume}</td> </tr>`
+      tableOfTopCrypto += `<tr> <td>${response[i].rank}</td> <td>${response[i].name}</td> <td>${response[i].price}</td> <td>${response[i]["1d"].volume}</td> </tr>`;
     }
     $("#topCrypto").before(tableOfTopCrypto);
   }
 }
 
-
 $(document).ready(function(){
   CryptoService.getCrypto("")
-  .then(function(response) {
-   getTopCrypto(response);
-  });
+    .then(function(response) {
+      getTopCrypto(response);
+    });
   $('#submit').click(function(){
     let ticker = $('#name').val();
-   CryptoService.getCrypto(ticker)
-   .then(function(response) {
-    getTicker(response);
-   });
+    CryptoService.getCrypto(ticker)
+      .then(function(response) {
+        getTicker(response);
+      });
   });
 });
