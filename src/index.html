@@ -8,37 +8,45 @@
     <h2>Get Crypto Information</h2>
     <div>
       <label for="name"> Enter a Ticker Symbol:</label>
-      <input id="name" type="text" onkeyup="this.value = this.value.toUpperCase()">
+      <input id="name" type="text" size="7" onkeyup="this.value = this.value.toUpperCase()">
     </div>
     <br>
     <button class="btn btn-primary" id="submit">Get Info</button>
+    <br>
+    <div class="box2">
+      <div>Time: <span class="time"></span></div>
+      <div>Rank: <span class="showRank"></span></div>
+      <div>Price: <span class="showPrice"></span></div>
+      <div>Trade volume: <span class="showVolume"></span></div>
+    </div>
   </div>
-  <div class="showRank"></div>
-  <div class="showPrice"></div>
-  <div class="showVolume"></div>
 
   <div class="box1">
     <h2>Find Crypto Price</h2>
-    <div>
-      <label for="buy"> Enter a Ticker Symbol:</label>
-      <input id="buy" type="text" onkeyup="this.value = this.value.toUpperCase()">
-    </div>
-    <div>
-      <label for="sell"> Enter a Ticker Symbol:</label>
-      <input id="sell" type="text" onkeyup="this.value = this.value.toUpperCase()">
-    </div>
-    <div>
-      <label for="quantityBuy"> Buy amount</label>
-      <input id="quantityBuy" type="number">
-    </div>
-    <div>
-      <label for="quantitySell"> Sell amount</label>
-      <input id="quantitySell" type="number" disabled>
+    <div class="box3">
+      <div>
+        <label for="buy">Buy Crypto</label>
+        <input id="buy" type="text" placeholder="Enter a Ticker Symbol" onkeyup="this.value = this.value.toUpperCase()">
+      </div>
+      <div>
+        <label for="sell">Sell Crypto</label>
+        <input id="sell" type="text" placeholder="Enter a Ticker Symbol" onkeyup="this.value = this.value.toUpperCase()">
+      </div>
+      <div>
+        <label for="quantityBuy">Buy amount</label>
+        <input id="quantityBuy" type="number">
+      </div>
+      <div>
+        <label for="quantitySell">Sell amount</label>
+        <input id="quantitySell" type="number" disabled>
+      </div>
+      <div>
+        <label for="dollar">Dollar</label>
+        <input id="dollar" type="number" disabled>
+      </div>
     </div>
     <button class="btn btn-primary" id="quote">Get Price</button>
-    <div class="showCost"></div>
   </div>
-
   <div>
     <h2>Top 100 Crypto</h2>
     <table class="table table-striped">

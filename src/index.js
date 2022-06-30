@@ -6,9 +6,10 @@ import CryptoService from './crypto-analytics-service';
 
 function getTicker(response) {
   if (response) {
-    $('.showRank').text(`The rank for ${response[0].name} is ${response[0].rank}.`);
-    $('.showPrice').text(`The price for ${response[0].name} is ${response[0].price} at ${new Date(response[0].price_timestamp)}.`);
-    $('.showVolume').text(`The trade volume for ${response[0].name} is ${response[0]["1d"].volume}.`);
+    $('.time').text(`${response[0].price_timestamp.replace("T"," ").replace("Z", "")}`);
+    $('.showRank').text(`${response[0].rank}`);
+    $('.showPrice').text(`$ ${new Intl.NumberFormat('en-US').format(response[0].price)}`);
+    $('.showVolume').text(`${new Intl.NumberFormat('en-US').format(response[0]["1d"].volume)}`);
   } else {
     $('.showErrors').text(`There was an error processing your request: ${response}`);
   }
@@ -23,7 +24,7 @@ function getTopCrypto(response) {
   if (response) {
     let tableOfTopCrypto = "";
     for (let i = 0; i < response.length; i++) {
-      tableOfTopCrypto += `<tr> <td>${response[i].rank}</td> <td> <img src="${response[i].logo_url}" width="25px"> ${response[i].symbol}</td> <td>${response[i].name}</td> <td> $ ${new Intl.NumberFormat('en-US').format(response[i].price)}</td> <td>${response[i]["1d"].volume}</td> </tr>`;
+      tableOfTopCrypto += `<tr> <td>${response[i].rank}</td> <td> <img src="${response[i].logo_url}" width="25px"> ${response[i].symbol}</td> <td>${response[i].name}</td> <td> $ ${new Intl.NumberFormat('en-US').format(response[i].price)}</td> <td>${new Intl.NumberFormat('en-US').format(response[i]["1d"].volume)}</td> </tr>`;
     }
     $("#topCrypto").before(tableOfTopCrypto);
   } else {
@@ -40,7 +41,8 @@ function cryptConverter(response) {
   if (response) {
     let quantBuy = $('#quantityBuy').val();
     let quantSell = quantBuy * response[0].price / response[1].price;
-    $('.showCost').text(`The cost for ${quantBuy} of ${response[0].name} is ${ quantBuy * parseFloat(response[0].price)}`);
+    let dollar = quantBuy * parseFloat(response[0].price);
+    $('#dollar').val(dollar);
     $('#quantitySell').val(quantSell);
   }
 }
